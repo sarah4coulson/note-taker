@@ -22,7 +22,10 @@ app.get("*", (req, res) =>
 
 
 app.get("/api/notes", (req, res) => {
-  res.json(noteDatabase);
+  fs.readFile("./db/db.json", (err, data) => {
+     res.json(data)
+    };
+ 
 });
 
 
